@@ -1,0 +1,45 @@
+:root{
+--bg-gray:  #808080;
+--bg:       #B91450;
+--pink:     #D36C91;
+--h2:       white;
+
+}
+
+body{background-color: var(--bg);}
+h2{color: var(--h2);}
+
+
+#dati_utente{
+    height: 250px; 
+    border-radius: 15px;
+    box-shadow: 0 0 20px black;
+}
+#dati_utente h3{
+    color: var(--pink);
+}
+.row{height: 100%;}
+
+.box{
+    width: 300px;
+    height: 50px;
+    border: 2px solid var(--pink);
+    border-radius: 10px;
+}
+
+#buttons button{
+    color: var(--bg);
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 0 10px;
+}
+
+
+
+
+#nome_passeggero {height: 200px;}
+
+
