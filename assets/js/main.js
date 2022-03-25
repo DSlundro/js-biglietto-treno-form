@@ -1,40 +1,54 @@
-// quanti km vuoi percorrere?
-const km_da_percorrere = prompt('Quanti km vuoi percorrere?');
-if (km_da_percorrere > 0) {
-    console.log('Hai inserito ' + km_da_percorrere + ' km');
-} else {
-    false;
-    alert('ERRORE: Inserisci i km da percorrere');
+//pulsante genera
+function myFunction() {
+    let elementName = document.getElementById("inputName").value;
+    document.getElementById("Passenger_name").innerHTML = elementName;
+    let travel_Distance = document.getElementById("inputKm").value
+    if (isNaN (travel_Distance) ) {
+        alert('Inserisi un numero valido')   
+    } else if (travel_Distance <= 0){
+        alert('La distanza non puo essere inferiore a 0')
+    }
+
+    //età
+    let eta = document.getElementById("FormControlSelect").value;
+
+    const prezzo_per_km = 0.21;
+    let prezzo_biglietto = travel_Distance * prezzo_per_km;
+
+    // prezzo over 65
+    const prezzo_over_65 = 0.4;
+
+    // prezzo minorenni
+    const prezzo_minorenni = 0.2;
+    
+    let biglietto;
+    if (eta === 'Over 65') {
+        biglietto = prezzo_biglietto - (prezzo_biglietto * prezzo_over_65);
+    } else if (eta === 'Minorenne') {
+        biglietto = prezzo_biglietto - (prezzo_biglietto * prezzo_minorenni);   
+    } else {
+        biglietto = prezzo_biglietto;
+    }
+    
+    document.getElementById("ms_ticket-price").innerHTML = `${biglietto.toFixed(2)} &euro;`
+
+    let sconto_eta;
+    if (eta === 'Over 65') {
+        sconto_eta = 'Sconto Over 65'
+    } else if (eta === 'Minorenne') {
+        sconto_eta = 'Sconto Minorenne'
+    } else {
+        sconto_eta = 'Prezzo pieno'
+    }
+    
+    document.getElementById("age_discount").innerHTML = sconto_eta;
+
+    let train_compartment =  Math.floor(Math.random() * 10);
+    console.log(train_compartment)
+
+    document.getElementById("train_section").innerHTML = train_compartment;
+
+    let cp_code =  Math.floor(Math.random() * 100000) +10000;
+    console.log(cp_code)
+    document.getElementById("cp_code").innerHTML = cp_code;
 }
-document.log
-// quanti anni hai?
-const età = prompt('Quanti anni hai?');
-if (età > 0) {
-    console.log('Hai inserito ' + età + ' anni');
-} else {
-    false;
-    alert('ERRORE: Inserisci la tua età');
-}
-
-//prezzo del biglietto - 0.21 € al km
-const prezzo_biglietto = km_da_percorrere * 0.21;
-
-// 20% sconto per i minorenni
-const prezzo_minorenni = prezzo_biglietto - (prezzo_biglietto * 0.2);
-
-// 40% sconto per gli over 65
-const prezzo_over_65 = prezzo_biglietto - (prezzo_biglietto * 0.4);
-
-// prezzo con due decimali per indicare i centesimi sul prezzo
-if (età < 18 && età > 0) {
-    console.log(prezzo_biglietto.toFixed(2) + ' €');
-    console.log(prezzo_minorenni.toFixed(2) + ' € prezzo scontato per i minorenni');
-} else if (età > 65) {
-    console.log(prezzo_biglietto.toFixed(2) + ' €');
-    console.log(prezzo_over_65.toFixed(2) + ' € prezzo scontato per gli over 65');
-} else if (età >= 18 || età <= 65) {
-    console.log(prezzo_biglietto.toFixed(2) + ' €');
-} else {
-    false
-}
-

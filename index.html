@@ -1,128 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- My CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    
-
-<main class="site_main d-flex align-items-center justify-content-center text-center">
-    <div class="container justify-content-center">
-        <div class="row ">
-            <div class="col-12">
-                <h2 class="py-3">
-                    CALCOLA IL PREZZO DEL TUO BIGLIETTO
-                </h2>
-
-                <div class="row">
-                    <div id="dati_utente" class="col-12 bg-white">
-                        <div class="row">
-                            <div class="col-12 d-flex justify-content-around align-items-center">
-                                <div class="nome_cognome">
-                                    <h3>Nome e Cognome</h3>
-                                    <div id="nome" class="box"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="title text-center text-white p-4">
+                            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                        </div>
+                    <form class="bg-white d-flex mx-5 radius ">
+                        <div class="container">
+                            <div class="form-row d-flex text-center p-4 justify-content-between">
+                            <div class="col-3 pink">
+                                    <label for="inputName">Nome Cognome</label>
+                                    <input type="text" class="form-control  b_purple" id="inputName" placeholder="es. pippo">
                                 </div>
-
-                                <div class="km_da_percorrere">
-                                    <h3>Km da percorrere</h3>
-                                    <div id="km" class="box"></div>
+                                
+                                <div class="col-3 pink">
+                                    <label for="inputKm">Km da percorrere</label>
+                                    <input type="text" class="form-control b_purple " id="inputKm" placeholder="es. 200">
+                                    
                                 </div>
-
-                                <div class="fascia_eta">
-                                    <h3>Facia d'età</h3>
-                                    <div id="eta" class="box"></div>
+                                <div class="col-3 pink form-group">
+                                    <label for="FormControlSelect">Fascia d'età</label>
+                                    <select class="form-control b_purple " id="FormControlSelect">
+                                    <option>Minorenne  </option> 
+                                    <option>Maggiorenne</option>
+                                    <option>Over 65</option>
+                                    </select>
                                 </div>
                             </div>
-                            <!-- col1 -->
-
-                            <div id="buttons" class="col-12 d-flex justify-content-center align-items-center">
-                                <button id="genera">Genera</button>
-                                <button id="annulla">Annulla</button>
+                            <div class="form-row p-4 text-center">
+                                <div class="col-12">
+                                    <a class="btn btn_lg m-2 pink  b_purple fw-bold " onclick="myFunction()">Genera</a>
+                                    <a  class="btn btn_lg m-2 pink  b_purple fw-bold">Annulla</a>
+                                </div>
                             </div>
-                            <!-- col2 -->
                         </div>
-                        <!-- row -->
+                    </form>  
+                        <div class="title text-center text-white p-4">
+                            <h2>IL TUO BIGLIETTO</h2>
+                        </div>
+                    <div class="Result_ticket bg-white d-flex mx-5">
+                        <div class="container p-3">
+                            <h5> DETTAGLIO PASSEGGERI</h5>
+                            <hr class="m-0">
+                            <div class="form-row d-flex text-start justify-content-between ">
+                                <div class="col-2 bg_lg p-3">
+                                    <h5>NOME PASSEGGERO </h5>
+                                    <h5 id="Passenger_name"></h5>
+                            </div>
+                            <div class="col-2 p-3"">
+                                <h5 class="mb-5">Offerta </h5>
+                                <span  id="age_discount"></span>
+                            </div>
+                            <div class="col-2 p-3"">
+                                <h5 class="mb-5">Carrozza </h5>
+                                <span id="train_section"></span>
+                            </div>
+                            <div class="col-2 p-3"">
+                                <h5 class="mb-5">Codice CP </h5>
+                                <span id="cp_code"></span>
+                            </div>
+                            <div class="col-2 p-3"">
+                                <h5 class="mb-5">Costo biglietto </h5>
+                                <span id="ms_ticket-price"></span>
+                            </div>
+                        </div>
+                        <hr class="m-0">
                     </div>
-                    <!-- dati_utente -->
-                </div>
-            </div>
-
-            
-            <div id="biglietto" class="pt-4">
-                <h2>IL TUO BIGLIETTO</h2>
-                <div id="contenuto_biglietto" class="row text-start bg-white p-4">
-                    <div class="">
-                        <h3>DETTAGLIO PASSEGGERI</h3>
-                    </div>
-
-                    <div id="nome_passeggero" class="col-3 bg-secondary p-4 fw-bold">
-                        <h3>
-                            NOME PASSEGGERO
-                        </h3>
-
-                        <div></div>
-                    </div>
-
-                    <div class="col-4 d-flex justify-content-around">
-                        <div id="offerta">
-                            <h3>
-                                Offerta
-                            </h3>
-                            <div></div>
-                        </div>
-
-                        <div id="carrozza">
-                            <h3>
-                                Carrozza
-                            </h3>
-                            <div></div>
-                        </div>
-
-                        <div id="cp">
-                            <h3>
-                                Codice CP
-                            </h3>
-                            <div></div>
-                        </div>
-
-                        <div id="costo_biglietto">
-                            <h3>
-                                Costo biglietto
-                            </h3>
-                            <div></div>
-                        </div>
+                </div>  
                     </div>
                 </div>
             </div>
-
-    
-            
-            
-        </div>
-    </div>
-
-
-
-
-</main>
-
-
-
-
-
-
-
-
-
-
-    <script src="./assets/js/main.js"></script>
-</body>
+        </main>
+        <script src="assets/js/main.js" ></script>
+    </body>
 </html>
+
