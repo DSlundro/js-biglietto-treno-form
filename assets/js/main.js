@@ -53,3 +53,7 @@ function myFunction() {
     document.getElementById("cp_code").innerHTML = cp_code;
 }
 
+
+function myChange(x) {
+    x.classList.toggle("fa-angle-up");
+  }

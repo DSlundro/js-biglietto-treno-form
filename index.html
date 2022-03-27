@@ -33,18 +33,23 @@
 
                                 <div class="col-3 pink form-group">
                                     <label for="FormControlSelect">Fascia d'età</label>
-                                    <select class="form-control b_purple " id="FormControlSelect">
-                                    <option>Minorenne  </option> 
-                                    <option>Maggiorenne</option>
-                                    <option>Over 65</option>
+                                    <div class="up-down text-dark">
+                                        <i class="fa-solid fa-angle-down" onclick="myChange(this)"></i>
+                                    </div>
+                                    <select class="form-control b_purple" id="FormControlSelect">
+                                        <option>Minorenne </option> 
+                                        <option>Maggiorenne</option>
+                                        <option>Over 65</option>
+                                        
                                     </select>
+                                    
                                 </div>
                             </div>
 
                             <div class="form-row p-4 text-center">
                                 <div class="col-12">
-                                    <a class="btn btn_lg m-2 pink  b_purple fw-bold " onclick="myFunction()">Genera</a>
-                                    <a  class="btn btn_lg m-2 pink  b_purple fw-bold">Annulla</a>
+                                    <a class="btn btn_lg m-2 pink  b_purple fw-bold " onclick="myFunction()" value="Genera">Genera</a>
+                                    <input class="btn btn_lg m-2 pink b_purple fw-bold" type="reset" value="Annulla">
                                 </div>
                             </div>
                         </div>
